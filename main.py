@@ -19,11 +19,12 @@ for i in range(5):
     turtles[i].goto(-200, 40*i - 80)
     turtles[i].color(colors[i])
     turtles[i].pendown()
-bet = input(f"Enter your bet (color of winning turtle): {colors}")
+bet = screen.textinput("Bet", f"Enter your bet (color of winning turtle): {colors}")
 
 winner = None
 while not winner:
     for t in turtles:
+        t.penup()
         distance = random.randint(0, 10)
         t.forward(distance)
         if t.xcor() >= 200:
